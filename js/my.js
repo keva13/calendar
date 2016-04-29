@@ -43,12 +43,13 @@ function BGDisplayDay() {
 var i=1;
 var j=1;
 $(".fc-row > div").each(function(indx, element){
-	$(this).attr("onclick",'Week_col="'+(j-1)+'"; Day_col="'+(i-1)+'"; selectDay()');
+	//$(this).attr("onclick",'Week_col="'+(j-1)+'"; Day_col="'+(i-1)+'"; selectDay()');
   if (i%2)$(this).css("background-color","#f6f6f6");
   if (i>=7)
   	{i=1;j++}
   else
     {i++;};
+$(this).append('<div onclick="Week_col='+(j-1)+'; Day_col='+(i-1)+'; selectDay()'+'"style="width:100%; height:100%;position:absolute;top:0px;left:0px;"></div>')
 });}
 
 $(document).ready(function(){

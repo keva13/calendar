@@ -30,7 +30,7 @@ for(var  i = 1; i <= Dlast; i++) {
   }else{
     calendar += '<div><span class="fc-date">' + i + "</span>";
   }
-  if (!!codropsEvents[now_dat]) calendar += '<div style="margin:5px;float:left;width:100%;border:0px;">' + codropsEvents[now_dat] + "</div>";
+  if (!!codropsEvents[now_dat]) calendar += '<div style="overflow:visible;z-index: 1;margin:5px;float:left;height:auto;width: auto;border:0px;">' + codropsEvents[now_dat] + "</div>";
   calendar+="</div>"
     
     if (DNfirst==0 && i==1) calendar += '</div><div class="fc-row">';

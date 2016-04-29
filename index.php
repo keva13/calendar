@@ -59,7 +59,7 @@
          <input class="add_HH HH"   id='add_HH0' name="add_HH0" placeholder="hh:mm" value="00:00" min="0">годин<br><br>
 
 	Введіть час:
-         <input class="add_HH HH" name="HH"  placeholder="hh:mm" value="00:00" min="1"><br><br>
+         <input id='add_HH' class="add_HH HH" name="HH"  placeholder="hh:mm" value="00:00" min="1"><br><br>
     Текст:<br>     
          <textarea name="content"></textarea>
          <input id="add_date" type="submit" class="submit">
@@ -137,6 +137,7 @@ $(document).ready(function() {
 
 });  
 $(document).on('click','.event', function(){
+
 	event.preventDefault(); 
 		overlay.fadeIn(400,
 			function(){
@@ -146,7 +147,7 @@ $(document).on('click','.event', function(){
 		});
 
 	$("#modal2  > .id_el").val($(this).prev().text());
-	$("#modal2  > .text").text($(this).find("span:not(.time)").text());
+	$("#modal2  > .text").html($(this).find(".time").text()+'<br>'+$(this).find("span:not(.time)").text());
 
 });
 
@@ -160,7 +161,7 @@ $(document).on('click','#add_date', function(){
 
 	MM=('0' + $("#modal1  > .MM").val()).slice(-2);
 	DD=('0' + $("#modal1  > .DD").val()).slice(-2);
-	HH=$("#modal1  > .HH").val();
+	HH=$("#modal1  > #add_HH").val();
 	YYYY=('0' + $("#modal1  > .YYYY").val()).slice(-4);
 	content=$("#modal1  > textarea").val()
 	time_notification="notification:";

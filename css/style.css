@@ -34,6 +34,7 @@ a{
 	height: 150px;
 	border: 1px solid #e9e9e9;
 	overflow: hidden;
+	position: relative;
 }
 .fc-date{
 	display: block;
@@ -131,6 +132,7 @@ hr{
 	cursor: pointer;
 }
 .fc-row .event, .col-xs-1 .event{
+	overflow: visible;
 	width: 20px;
 	height: 20px;
 	display: inline-block;
@@ -165,6 +167,7 @@ hr{
     top: 36px;
 }
 .add_event{
+	z-index: 1;
 	cursor: pointer;
     position: fixed;
     right: 10px;

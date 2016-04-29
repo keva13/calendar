@@ -21,6 +21,7 @@ for (var i = 0; i <= localStorage.length-1; i++) {
 			var dateNotification = new Date(Number(loc.substr(6,4)), Number(loc.substr(0,2))-1, Number(loc.substr(3,2)), Number(loc.substr(loc.indexOf("none;\">")+7,2)),Number(loc.substr(loc.indexOf("none;\">")+10,2)) );
 			// дізнаємоємось скільки годин лишилось до сповіщення про нагадування
 			var hour=(dateNotification.getTime()-now.getTime())/(1000*60*60)
+			console.log(hour);
 			// нагадування відображається протягом двох хвилин
 			if (hour<notificationTimeRemind+0.0166667 && hour>notificationTimeRemind-0.0166667){
 				//свторюємо блок для сповіщень, якщо його ще немає

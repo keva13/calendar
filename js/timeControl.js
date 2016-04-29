@@ -39,7 +39,7 @@ $('body').on('keydown', '.add_HH', function(e){
 });
 
 function TimeChange (this_el) {
- 	
+ 
 myCursorPosition=getCaretPosition(this_el);
 if (myCursorPosition==3)
 	myCursorPosition=4;
@@ -65,4 +65,5 @@ $('body').on('blur', '.add_HH', function(e){
   if ($(this).val().length<5){
     $(this).val('')
   }
+  $(this).val($(this).val().substring(5,-1))
 });
