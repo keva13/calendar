@@ -1,4 +1,5 @@
-
+Week_col = 0;
+Day_col = 0;
 selectView='Month';
 
 
