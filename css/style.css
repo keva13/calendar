@@ -1,0 +1,322 @@
+table{
+	position: absolute;
+    top: 290px;
+}
+body{
+	height: 100%;
+	padding-top: 46px;
+}
+html{
+	height: 100%;
+}
+a{
+	cursor: pointer;
+}
+.row,.container-fluid,.col-xs-6{
+	margin: 0px;
+	padding: 0px;
+}
+.fc-weekday{
+	display: none;
+}
+.fc-head div{
+	display: inline-block;
+	width: calc(100% / 7);
+	text-align: center;
+	background-color: #eeeeee;
+    padding-top: 15px;
+    height: 50px;
+}
+.fc-row div:not(.event){
+	display: inline-block;
+	width: calc(100% / 7);
+	text-align: center;
+	height: 150px;
+	border: 1px solid #e9e9e9;
+	overflow: hidden;
+}
+.fc-date{
+	display: block;
+	margin: auto;
+	border-radius: 100%;
+	background-color: #f3f3f3;
+    padding-top: 13px;
+    margin-top: -17px;
+    width: 34px;
+    height: 31px;
+}
+.head-group-label{
+	position: absolute;
+    left: 48px;
+    margin: auto;
+    margin-top: 9px;
+    width: 67%;
+    text-align: center;
+}
+#custom-next{
+	cursor: pointer;
+	float: right;
+	color: #ff815b;
+	border: 3px solid #ff815b;
+	border-radius: 100px;
+    padding: 1px;
+    font-size: 20px;
+    margin: 5px;
+}
+#custom-prev{
+	cursor: pointer;
+    position: absolute;
+	color: #ff815b;
+	border: 3px solid #ff815b;
+	border-radius: 100px;
+    padding: 1px;
+    font-size: 20px;
+    margin: 5px;
+}
+.custom-month,.custom-year{
+	color: #a4a4a4;
+	margin: 9px;
+	font-size: 17px;
+}
+.dropdown-select , .dropdown-select:hover , .dropdown-select:active{
+	text-align: left;
+	background-color: white;
+	color: black;
+	outline: none;
+	height: 42px;
+	width: 150px;
+	border: 0px;
+	padding:0px;
+    padding-left: 11px;
+	border-right: 1px solid #f7f7f7;
+	-webkit-appearance: none;
+	background-image: url('/img/select.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: 30px;
+}
+
+.dropdown-menu{
+    border-radius: 0px 0px 10px 10px;
+    margin: -1px -10px;
+    border-top: 0px;
+}
+.fc-today {
+	background-color: #f9ede8;
+}
+.fc-today .fc-date{
+	color: #f88e6d;
+}
+
+.time{    
+	padding-top: 40px;
+	height: 100px;
+	background-color: #eeeeee;
+	text-align: center;
+}
+.time-container{
+	display: none;
+}
+hr{
+	margin: 0px;
+	border: 2px solid #e8e8e8;
+}
+.time_line{
+	height: 98px;
+	width: 0px;
+	border: 1px solid #e8e8e8;
+	float: right;
+}
+.fc-row div{
+	cursor: pointer;
+}
+.fc-row .event, .col-xs-1 .event{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border-radius: 100px;
+	background-color: #add688;
+	box-shadow: 2px 2px 6px -3px #000000;
+}
+
+.fc-row .event, .col-xs-1 .event{
+	cursor: pointer;
+    position:relative;
+    float: left;
+    margin: 2px;
+}
+.fc-row .event span, .col-xs-1 .event span{
+    width: 150px;
+    display:none;
+    background:#f3f3f3;
+    -moz-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    -webkit-box-shadow:0 5px 5px rgba(0,0,0,0.3);
+    box-shadow:0 5px 5px rgba(0,0,0,0.3);
+}
+.fc-row .event:hover  span, .col-xs-1 .event:hover span{
+    display:block;
+    position:absolute;
+    top:10px;
+    z-index:9999;
+}
+.col-xs-1 .event{
+	float: right;
+	left: 13px;
+    top: 36px;
+}
+.add_event{
+	cursor: pointer;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 55px;
+    height: 55px;
+    border-radius: 100px;
+    background-color: #add688;
+    color: white;
+    font-size: 59px;
+    text-align: center;
+    line-height: 1;
+}
+.modal_div {
+	overflow: auto;
+	width: 500px; 
+	height: 500px; /* Рaзмеры дoлжны быть фиксирoвaны */
+	border-radius: 5px;
+	border: 3px #000 solid;
+	background: #fff;
+	position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+	top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+	left: 50%; /* пoлoвинa экрaнa слевa */
+	margin-top: -250px;
+	margin-left: -250px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+	display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+	opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
+	z-index: 5; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+	padding: 20px 10px;
+}
+.modal_div input:not(.submit){
+	margin: 0px;
+	margin-right: 3px;
+	margin-top: 3px;
+	border: 1px solid #aeaeb1;
+	border-radius: 2px;
+	padding-left: 3px;
+}
+/* Кнoпкa зaкрыть для тех ктo в тaнке) */
+.modal_div .modal_close {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: block;
+}
+/* Пoдлoжкa */
+#overlay {
+	z-index:3; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+	position:fixed; /* всегдa перекрывaет весь сaйт */
+	background-color:#000; /* чернaя */
+	opacity:0.8; /* нo немнoгo прoзрaчнa */
+	-moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
+	filter:alpha(opacity=80);
+	width:100%; 
+	height:100%; /* рaзмерoм вo весь экрaн */
+	top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+	left:0;
+	cursor:pointer;
+	display:none; /* в oбычнoм сoстoянии её нет) */
+}
+.MM,.DD,.HH{
+	width: 55px;
+}
+.YYYY{
+	width: 55px;
+}
+textarea{
+    margin: 0px;
+    height: 172px;
+    width: 473px;
+}
+.submit{
+	margin-top: 10px;
+}
+.id_el{
+	display: none;
+}
+.fix_top{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: white;
+    z-index: 99;
+}
+.delete_time{
+	color: red;
+	margin-left: 8px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+
+/*----------------------------*\
+    NOTIFICATOIN
+\*----------------------------*/
+
+
+
+.add_notification{
+	cursor: pointer;
+	font-size: 20px;
+	color: green;
+	font-weight: bold;
+}
+.countNotification{
+	position: absolute;
+	top: 0px;
+	left: 40px;
+	color: red;
+}
+.notification{
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	padding-left: 50px;
+	background-image: url(../img/notif.png);
+	background-size: cover;
+	bottom: 0px;
+	left:0px;
+}
+.notification:hover{
+	position: fixed;
+	padding: 4px;
+	width: 200px;
+	height: 300px;
+	overflow: auto;
+	background-image: none;
+	background-color: white;
+	border:1px solid black;
+	bottom: 0px;
+	left:0px;
+}
+.notification:hover .countNotification{
+	display: none;
+}
+.notification-event{
+	margin-bottom: 5px;
+	border: 1px solid black;
+}
+
+.notification-event .noti_time{
+	font-size: 10px;
+	color: rgb(155, 157, 157);
+}
+
+.notification-event .content{
+	font-size: 14px;
+	color: black;
+	cursor: pointer;
+}
